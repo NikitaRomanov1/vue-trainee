@@ -1,0 +1,16 @@
+.btn {
+  border: none;
+
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.primary {
+  color: #ddfff7;
+  background-color: #ffa69e;
+}
+
+.primary:hover {
+  background-color: #aa4465;
+}
