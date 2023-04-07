@@ -1,3 +1,5 @@
 .radio-items {
-  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  height: 15px;
 }

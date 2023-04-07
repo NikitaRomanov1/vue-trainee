@@ -1,7 +1,11 @@
 <template>
   <div class="header">
     <div class="header__search">
-      <MyInput v-model="countElements" placeholder="Введите кол-во элементов" />
+      <MyInput
+        v-model="countElements"
+        type="number"
+        placeholder="Введите кол-во элементов"
+      />
       <MyButton @click="handleClick()" name="Найти" />
     </div>
   </div>

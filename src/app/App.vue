@@ -1,20 +1,21 @@
 <template>
   <MyHeader @getElements="(e) => getElements(e)" />
   <MyRadioGroup :items="radioItems" v-model="radioItem" class="radio-items" />
-  <!-- <Gallery/> -->
+  <MyGallery :images="images" />
 </template>
 
 <script>
 import { MyRadioGroup } from "@/UI";
-import MyHeader from "../components/MyHeader";
+import { MyHeader, MyGallery } from "../components";
 import { apiNames } from "../types";
 import getNewCharacters from "../api/getNewCharacters";
 export default {
   name: "App",
-  components: { MyHeader, MyRadioGroup },
+  components: { MyHeader, MyRadioGroup, MyGallery },
   data() {
     return {
       radioItem: apiNames.picsum,
+      images: [],
     };
   },
   computed: {
@@ -27,15 +28,15 @@ export default {
     },
   },
   methods: {
-    getElements(e) {
-      console.log(e);
+    async getElements(e) {
+      this.images = await getNewCharacters(this.radioItem, e);
     },
   },
   watch: {
     radioItem: {
       immediate: true,
       async handler(value) {
-        getNewCharacters(value);
+        this.images = await getNewCharacters(value);
       },
     },
   },

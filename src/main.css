@@ -9,7 +9,15 @@ body {
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
 }
-
+figure {
+  display: block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
 #app {
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }

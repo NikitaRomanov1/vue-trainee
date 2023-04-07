@@ -1,2 +1,3 @@
 import MyHeader from "./MyHeader";
-export { MyHeader };
+import MyGallery from "./MyGallery";
+export { MyHeader, MyGallery };
